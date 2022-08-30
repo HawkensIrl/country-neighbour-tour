@@ -1,0 +1,40 @@
+<h1 id="tour-advice-app">Tour Advice App</h1>
+<p>Tour Advice App(TAA) implements a Rest API to calculate the cost of going on a holiday to all surrounding countries given a budget. It makes use of <a href="https://www.geonames.org/export/web-services.html#countryInfo">geonames</a> and the <a href="https://exchangeratesapi.io/">exchangeratesapi</a>.</p>
+<h2 id="usage">Usage</h2>
+<p>To use TAA you:</p>
+<ul>
+<li>Go to <strong><a href="http://localhost:8080/">http://localhost:8080/</a></strong></li>
+<li>Login to Googles OAuth Service</li>
+<li>Go the following sample url: 
+<strong><a href="http://localhost:8080/tourAdvice?totalBudget=1200&amp;budgetPerCountry=100&amp;startingCountryCode=BG&amp;currency=EUR">http://localhost:8080/tourAdvice?totalBudget=1200&amp;budgetPerCountry=100&amp;startingCountryCode=BG&amp;currency=EUR</a></strong></li>
+<li><em>TotalBudget</em> - the total budget for the trip</li>
+<li><em>BudgetPerCountry</em> - the budget for each country</li>
+<li><em>StartingCountryCode</em> - the countryCode for the country whose surrounding countries you want to visit.</li>
+</ul>
+<h2 id="output">Output</h2>
+<p>When the sample above is used, the result is the following:</p>
+<pre><code class="lang-python">numberOfTours    <span class="hljs-number">2</span>
+
+leftOverCash    <span class="hljs-number">200</span>
+
+countryNeighbourMap    
+Greece    
+currencyId    <span class="hljs-string">"EUR"</span>
+currencyAmount    <span class="hljs-number">100</span>
+
+Romania    
+currencyId    <span class="hljs-string">"RON"</span>
+currencyAmount    <span class="hljs-number">486.622</span>
+
+Turkey    
+currencyId    <span class="hljs-string">"TRY"</span>
+currencyAmount    <span class="hljs-number">1821.6387</span>
+
+North Macedonia    
+currencyId    <span class="hljs-string">"MKD"</span>
+currencyAmount    <span class="hljs-number">6136.7765</span>
+
+Serbia    
+currencyId    <span class="hljs-string">"RSD"</span>
+currencyAmount    <span class="hljs-number">11737.0374</span>
+</code></pre>
